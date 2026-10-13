@@ -1,0 +1,61 @@
+{
+ "selections": [
+  {
+   "pick": "Stonebridge",
+   "odds": "2,30",
+   "quote": "2,30"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "2,30",
+   "3,25",
+   "3,10"
+  ],
+  "quote": "1 2,30\nX 3,25\n2 3,10"
+ },
+ "stake": {
+  "value": 8.0,
+  "quote": "€8,00"
+ },
+ "returns": {
+  "value": 18.4,
+  "quote": "€18,40"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Stonebridge v Larkhill",
+  "quote": "Stonebridge v Larkhill"
+ },
+ "market": {
+  "text": "1X2",
+  "quote": "1X2"
+ },
+ "bet_type": {
+  "text": "Single",
+  "quote": "Single"
+ },
+ "total_odds": {
+  "text": "2,30",
+  "quote": "2,30"
+ }
+}

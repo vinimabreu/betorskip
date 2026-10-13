@@ -1,0 +1,20 @@
+# A made-up bettor's rules. Copy this to ~/.config/betorskip/rules.toml and make it yours.
+
+[bankroll]
+bankroll = 500
+max_stake_pct = 5
+
+[odds]
+min_odds = 1.30
+max_odds = 6.0
+max_legs = 3
+max_margin_pct = 8
+
+[markets]
+never = ["correct score", "first goalscorer", "bet builder"]
+live_is_wall = false
+max_rollover = 5
+
+[value]
+min_edge_pct = 2
+kelly_fraction = 0.25

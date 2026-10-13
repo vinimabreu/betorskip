@@ -1,0 +1,61 @@
+{
+ "selections": [
+  {
+   "pick": "Ormsdale Athletic",
+   "odds": "5/4",
+   "quote": "Ormsdale Athletic 5/4"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "5/4",
+   "12/5",
+   "11/5"
+  ],
+  "quote": "Ormsdale Athletic 5/4\nDraw 12/5\nMillbrook United 11/5"
+ },
+ "stake": {
+  "value": 20.0,
+  "quote": "Stake £20.00"
+ },
+ "returns": {
+  "value": 45.0,
+  "quote": "Returns £45.00"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Ormsdale Athletic v Millbrook United",
+  "quote": "Ormsdale Athletic v Millbrook United"
+ },
+ "market": {
+  "text": "Full Time Result",
+  "quote": "Full Time Result"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "5/4",
+  "quote": "5/4"
+ }
+}

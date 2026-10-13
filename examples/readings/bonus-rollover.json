@@ -1,0 +1,59 @@
+{
+ "selections": [
+  {
+   "pick": "Eastvale FC",
+   "odds": "1.75",
+   "quote": "1.75"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "1.75"
+  ],
+  "quote": "Match Result · Eastvale FC v Bayside Albion\n1.75"
+ },
+ "stake": {
+  "value": 20.0,
+  "quote": "Stake £20.00"
+ },
+ "returns": {
+  "value": 35.0,
+  "quote": "Potential returns £35.00"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": 10,
+  "quote": "wagered 10 times"
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": true,
+  "quote": "Paying with: Bonus funds £20.00"
+ },
+ "event": {
+  "text": "Eastvale FC v Bayside Albion",
+  "quote": "Eastvale FC v Bayside Albion"
+ },
+ "market": {
+  "text": "Match Result",
+  "quote": "Match Result"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "1.75",
+  "quote": "1.75"
+ }
+}

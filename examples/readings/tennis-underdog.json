@@ -1,0 +1,60 @@
+{
+ "selections": [
+  {
+   "pick": "D. Lindqvist",
+   "odds": "7.50",
+   "quote": "7.50"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "1.10",
+   "7.50"
+  ],
+  "quote": "M. Okafor 1.10\nD. Lindqvist 7.50"
+ },
+ "stake": {
+  "value": 5.0,
+  "quote": "£5.00"
+ },
+ "returns": {
+  "value": 37.5,
+  "quote": "£37.50"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "M. Okafor v D. Lindqvist",
+  "quote": "M. Okafor v D. Lindqvist"
+ },
+ "market": {
+  "text": "Match Winner",
+  "quote": "Match Winner"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "7.50",
+  "quote": "7.50"
+ }
+}

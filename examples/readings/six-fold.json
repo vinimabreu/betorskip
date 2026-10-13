@@ -1,0 +1,82 @@
+{
+ "selections": [
+  {
+   "pick": "Millbrook United",
+   "odds": "1.45",
+   "quote": "Millbrook United · Match Result · 1.45"
+  },
+  {
+   "pick": "Ormsdale Athletic",
+   "odds": "1.62",
+   "quote": "Ormsdale Athletic · Match Result · 1.62"
+  },
+  {
+   "pick": "Eastvale FC",
+   "odds": "1.80",
+   "quote": "Eastvale FC · Match Result · 1.80"
+  },
+  {
+   "pick": "Crestwood",
+   "odds": "1.30",
+   "quote": "Crestwood · Match Result · 1.30"
+  },
+  {
+   "pick": "Bayside Albion",
+   "odds": "2.05",
+   "quote": "Bayside Albion · Match Result · 2.05"
+  },
+  {
+   "pick": "Westmere",
+   "odds": "1.55",
+   "quote": "Westmere · Match Result · 1.55"
+  }
+ ],
+ "market_odds": {
+  "prices": [],
+  "quote": ""
+ },
+ "stake": {
+  "value": 5.0,
+  "quote": "£5.00"
+ },
+ "returns": {
+  "value": 87.33,
+  "quote": "£87.33"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Millbrook United",
+  "quote": "Millbrook United"
+ },
+ "market": {
+  "text": "Match Result",
+  "quote": "Match Result"
+ },
+ "bet_type": {
+  "text": "6-Fold Accumulator",
+  "quote": "6-Fold Accumulator"
+ },
+ "total_odds": {
+  "text": "17.47",
+  "quote": "17.47"
+ }
+}

@@ -1,0 +1,59 @@
+{
+ "selections": [
+  {
+   "pick": "Quarrymoor Town 2-1",
+   "odds": "9.00",
+   "quote": "9.00"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "9.00"
+  ],
+  "quote": "Correct Score · Quarrymoor Town v Westmere\n9.00"
+ },
+ "stake": {
+  "value": 4.0,
+  "quote": "£4.00"
+ },
+ "returns": {
+  "value": 36.0,
+  "quote": "£36.00"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Quarrymoor Town v Westmere",
+  "quote": "Quarrymoor Town v Westmere"
+ },
+ "market": {
+  "text": "Correct Score",
+  "quote": "Correct Score"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "9.00",
+  "quote": "9.00"
+ }
+}

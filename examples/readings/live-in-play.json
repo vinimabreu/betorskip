@@ -1,0 +1,61 @@
+{
+ "selections": [
+  {
+   "pick": "Westmere",
+   "odds": "1.40",
+   "quote": "1.40"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "1.40",
+   "4.50",
+   "9.00"
+  ],
+  "quote": "Westmere 1.40\nDraw 4.50\nCrestwood 9.00"
+ },
+ "stake": {
+  "value": 10.0,
+  "quote": "£10.00"
+ },
+ "returns": {
+  "value": 14.0,
+  "quote": "£14.00"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": true,
+  "quote": "LIVE 67' Westmere 1-0 Crestwood"
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Westmere 1-0 Crestwood",
+  "quote": "Westmere 1-0 Crestwood"
+ },
+ "market": {
+  "text": "Match Result (in-play)",
+  "quote": "Match Result (in-play)"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "1.40",
+  "quote": "1.40"
+ }
+}

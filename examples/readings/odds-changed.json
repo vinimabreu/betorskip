@@ -1,0 +1,59 @@
+{
+ "selections": [
+  {
+   "pick": "Kingsport City",
+   "odds": "1.80",
+   "quote": "1.95 → 1.80"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "1.80"
+  ],
+  "quote": "1.95 → 1.80"
+ },
+ "stake": {
+  "value": 20.0,
+  "quote": "£20.00"
+ },
+ "returns": {
+  "value": 36.0,
+  "quote": "£36.00"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": true,
+  "quote": "Odds changed 1.95 → 1.80"
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Larkhill v Kingsport City",
+  "quote": "Larkhill v Kingsport City"
+ },
+ "market": {
+  "text": "Match Result",
+  "quote": "Match Result"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "1.80",
+  "quote": "1.80"
+ }
+}

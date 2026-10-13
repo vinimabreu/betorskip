@@ -1,0 +1,61 @@
+{
+ "selections": [
+  {
+   "pick": "Redcliff Rangers",
+   "odds": "1.72",
+   "quote": "1.72"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "1.72",
+   "3.20",
+   "4.00"
+  ],
+  "quote": "Redcliff Rangers 1.72\nDraw 3.20\nStonebridge 4.00"
+ },
+ "stake": {
+  "value": 10.0,
+  "quote": "£10.00"
+ },
+ "returns": {
+  "value": 17.2,
+  "quote": "£17.20"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Redcliff Rangers v Stonebridge",
+  "quote": "Redcliff Rangers v Stonebridge"
+ },
+ "market": {
+  "text": "Match Result",
+  "quote": "Match Result"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "1.72",
+  "quote": "1.72"
+ }
+}

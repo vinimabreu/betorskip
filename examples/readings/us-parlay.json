@@ -1,0 +1,65 @@
+{
+ "selections": [
+  {
+   "pick": "Cobbleston Pioneers",
+   "odds": "-110",
+   "quote": "Cobbleston Pioneers · Moneyline · -110"
+  },
+  {
+   "pick": "Austin Comets",
+   "odds": "+120",
+   "quote": "Austin Comets · Spread +4.5 · +120"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "-110",
+   "+120"
+  ],
+  "quote": "Cobbleston Pioneers · Moneyline · -110\nAustin Comets · Spread +4.5 · +120"
+ },
+ "stake": {
+  "value": 20.0,
+  "quote": "$20.00"
+ },
+ "returns": {
+  "value": 84.0,
+  "quote": "$84.00"
+ },
+ "to_win": {
+  "value": 64.0,
+  "quote": "$64.00"
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Cobbleston Pioneers",
+  "quote": "Cobbleston Pioneers"
+ },
+ "market": {
+  "text": "Moneyline",
+  "quote": "Moneyline"
+ },
+ "bet_type": {
+  "text": "PARLAY (2 LEGS)",
+  "quote": "PARLAY (2 LEGS)"
+ },
+ "total_odds": {
+  "text": "+320",
+  "quote": "Parlay odds +320"
+ }
+}

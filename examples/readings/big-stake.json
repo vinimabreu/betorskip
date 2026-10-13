@@ -1,0 +1,61 @@
+{
+ "selections": [
+  {
+   "pick": "Quarrymoor Town",
+   "odds": "1.65",
+   "quote": "1.65"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "1.65",
+   "3.90",
+   "5.20"
+  ],
+  "quote": "Quarrymoor Town 1.65\nDraw 3.90\nEastvale FC 5.20"
+ },
+ "stake": {
+  "value": 60.0,
+  "quote": "£60.00"
+ },
+ "returns": {
+  "value": 99.0,
+  "quote": "£99.00"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Quarrymoor Town v Eastvale FC",
+  "quote": "Quarrymoor Town v Eastvale FC"
+ },
+ "market": {
+  "text": "Match Result",
+  "quote": "Match Result"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "1.65",
+  "quote": "1.65"
+ }
+}

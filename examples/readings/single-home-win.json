@@ -1,0 +1,61 @@
+{
+ "selections": [
+  {
+   "pick": "Northgate Rovers",
+   "odds": "2.10",
+   "quote": "2.10"
+  }
+ ],
+ "market_odds": {
+  "prices": [
+   "2.10",
+   "3.40",
+   "3.50"
+  ],
+  "quote": "Northgate Rovers 2.10\nDraw 3.40\nKingsport City 3.50"
+ },
+ "stake": {
+  "value": 10.0,
+  "quote": "£10.00"
+ },
+ "returns": {
+  "value": 21.0,
+  "quote": "£21.00"
+ },
+ "to_win": {
+  "value": null,
+  "quote": ""
+ },
+ "rollover": {
+  "value": null,
+  "quote": ""
+ },
+ "live": {
+  "present": false,
+  "quote": ""
+ },
+ "odds_changed": {
+  "present": false,
+  "quote": ""
+ },
+ "bonus": {
+  "present": false,
+  "quote": ""
+ },
+ "event": {
+  "text": "Northgate Rovers v Kingsport City",
+  "quote": "Northgate Rovers v Kingsport City"
+ },
+ "market": {
+  "text": "Match Result",
+  "quote": "Match Result"
+ },
+ "bet_type": {
+  "text": "SINGLE",
+  "quote": "SINGLE"
+ },
+ "total_odds": {
+  "text": "2.10",
+  "quote": "2.10"
+ }
+}

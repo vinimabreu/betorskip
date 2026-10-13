@@ -1,0 +1,285 @@
+{
+ "six-fold": {
+  "ocr": "Bet Slip (6)\n\n6-Fold Accumulator\n\nMillbrook United - Match Result 1.45\nOrmsdale Athletic - Match Result 1.82\nEastvale FC - Match Result 4.80\nCrestwood « Match Result 4.30\nBayside Albion - Match Result 2.05\nWestmere « Match Result 1.55\nTotal odds 1747\nStake £5.00\nPotential returns £87.33\n\nPlace bet £5.00\n",
+  "raw": {
+   "selections": [
+    {
+     "pick": "Millbrook United",
+     "odds": "1.45",
+     "quote": "Millbrook United - Match Result 1.45"
+    },
+    {
+     "pick": "Ormsdale Athletic",
+     "odds": "1.82",
+     "quote": "Ormsdale Athletic - Match Result 1.82"
+    },
+    {
+     "pick": "Eastvale FC",
+     "odds": "4.80",
+     "quote": "Eastvale FC - Match Result 4.80"
+    },
+    {
+     "pick": "Crestwood",
+     "odds": "4.30",
+     "quote": "Crestwood « Match Result 4.30"
+    },
+    {
+     "pick": "Bayside Albion",
+     "odds": "2.05",
+     "quote": "Bayside Albion - Match Result 2.05"
+    },
+    {
+     "pick": "Westmere",
+     "odds": "1.55",
+     "quote": "Westmere « Match Result 1.55"
+    }
+   ],
+   "market_odds": {
+    "prices": [],
+    "quote": ""
+   },
+   "stake": {
+    "value": 5.0,
+    "quote": "Stake £5.00"
+   },
+   "returns": {
+    "value": 87.33,
+    "quote": "Potential returns £87.33"
+   },
+   "to_win": {
+    "value": null,
+    "quote": ""
+   },
+   "rollover": {
+    "value": null,
+    "quote": ""
+   },
+   "live": {
+    "present": false,
+    "quote": ""
+   },
+   "odds_changed": {
+    "present": false,
+    "quote": ""
+   },
+   "bonus": {
+    "present": false,
+    "quote": ""
+   },
+   "event": {
+    "text": "Millbrook United",
+    "quote": "Millbrook United"
+   },
+   "market": {
+    "text": "Match Result",
+    "quote": "Match Result"
+   },
+   "bet_type": {
+    "text": "6-Fold Accumulator",
+    "quote": "6-Fold Accumulator"
+   },
+   "total_odds": {
+    "text": "1747",
+    "quote": "Total odds 1747"
+   }
+  }
+ },
+ "us-parlay": {
+  "ocr": "BET SLIP\n\nPARLAY (2 LEGS)\n\nCobbleston Pioneers - Moneyline\nAustin Comets Spread +4.5\nParlay odds\n\nRisk:\n\nTowin\n\nPlace Bet\n\n“110\n\n+120\n\n#320\n\n‘$20.00\n$64.00\n",
+  "raw": {
+   "selections": [
+    {
+     "pick": "Cobbleston Pioneers - Moneyline",
+     "odds": "110",
+     "quote": "110"
+    },
+    {
+     "pick": "Austin Comets Spread +4.5",
+     "odds": "+120",
+     "quote": "+120"
+    }
+   ],
+   "market_odds": {
+    "prices": [],
+    "quote": ""
+   },
+   "stake": {
+    "value": 20.0,
+    "quote": "$20.00"
+   },
+   "returns": {
+    "value": 64.0,
+    "quote": "$64.00"
+   },
+   "to_win": {
+    "value": 64.0,
+    "quote": "$64.00"
+   },
+   "rollover": {
+    "value": null,
+    "quote": ""
+   },
+   "live": {
+    "present": false,
+    "quote": ""
+   },
+   "odds_changed": {
+    "present": false,
+    "quote": ""
+   },
+   "bonus": {
+    "present": false,
+    "quote": ""
+   },
+   "event": {
+    "text": "Cobbleston Pioneers - Moneyline",
+    "quote": "Cobbleston Pioneers - Moneyline"
+   },
+   "market": {
+    "text": "Moneyline",
+    "quote": "Moneyline"
+   },
+   "bet_type": {
+    "text": "PARLAY (2 LEGS)",
+    "quote": "PARLAY (2 LEGS)"
+   },
+   "total_odds": {
+    "text": "#320",
+    "quote": "#320"
+   }
+  }
+ },
+ "thin-market": {
+  "ocr": "Bet Slip (1)\n\nSINGLE\nRedcliff Rangers\nMatch Result - Redcliff Rangers v Stonebridge\n\n172\nStake £10.00\nPotential tums £17.20\nMatch Result\n\nRedcliff Rangers 472\nDraw 3.20\nStonebridge\n\nPlace bet £10.00\n",
+  "raw": {
+   "selections": [
+    {
+     "pick": "Redcliff Rangers",
+     "odds": "1.72",
+     "quote": "172"
+    }
+   ],
+   "market_odds": {
+    "prices": [
+     "1.72",
+     "3.20",
+     "4.72"
+    ],
+    "quote": "Redcliff Rangers 1.72 Draw 3.20 Stonebridge 4.72"
+   },
+   "stake": {
+    "value": 10.0,
+    "quote": "£10.00"
+   },
+   "returns": {
+    "value": 17.2,
+    "quote": "£17.20"
+   },
+   "to_win": {
+    "value": null,
+    "quote": ""
+   },
+   "rollover": {
+    "value": null,
+    "quote": ""
+   },
+   "live": {
+    "present": false,
+    "quote": ""
+   },
+   "odds_changed": {
+    "present": false,
+    "quote": ""
+   },
+   "bonus": {
+    "present": false,
+    "quote": ""
+   },
+   "event": {
+    "text": "Redcliff Rangers v Stonebridge",
+    "quote": "Redcliff Rangers v Stonebridge"
+   },
+   "market": {
+    "text": "Match Result",
+    "quote": "Match Result"
+   },
+   "bet_type": {
+    "text": "SINGLE",
+    "quote": "SINGLE"
+   },
+   "total_odds": {
+    "text": "1.72",
+    "quote": "172"
+   }
+  }
+ },
+ "uk-fractional": {
+  "ocr": "Betslip\n\nSINGLE\nOrmsdale Athletic\nFull Time Result - Ormsdale Athletic v Millbrook United\n\n5/4\nStake £20.00\nReturns £45.00\nFull Time Result\n\nOrmsdale Athletic 5A\nDraw 1265\nMillbrook United 16\n\nPlace bet\n",
+  "raw": {
+   "selections": [
+    {
+     "pick": "Ormsdale Athletic",
+     "odds": "5/4",
+     "quote": "5/4"
+    },
+    {
+     "pick": "Full Time Result",
+     "odds": "5/4",
+     "quote": "5/4"
+    }
+   ],
+   "market_odds": {
+    "prices": [
+     "5/4",
+     "1/2",
+     "1/6"
+    ],
+    "quote": "Ormsdale Athletic 5A Draw 1/2 Millbrook United 1/6"
+   },
+   "stake": {
+    "value": 20.0,
+    "quote": "£20.00"
+   },
+   "returns": {
+    "value": 45.0,
+    "quote": "£45.00"
+   },
+   "to_win": {
+    "value": null,
+    "quote": ""
+   },
+   "rollover": {
+    "value": null,
+    "quote": ""
+   },
+   "live": {
+    "present": false,
+    "quote": ""
+   },
+   "odds_changed": {
+    "present": false,
+    "quote": ""
+   },
+   "bonus": {
+    "present": false,
+    "quote": ""
+   },
+   "event": {
+    "text": "Ormsdale Athletic v Millbrook United",
+    "quote": "Ormsdale Athletic v Millbrook United"
+   },
+   "market": {
+    "text": "Full Time Result",
+    "quote": "Full Time Result"
+   },
+   "bet_type": {
+    "text": "SINGLE",
+    "quote": "SINGLE"
+   },
+   "total_odds": {
+    "text": "5/4",
+    "quote": "5/4"
+   }
+  }
+ }
+}

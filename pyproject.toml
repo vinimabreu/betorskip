@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "betorskip"
+version = "0.1.0"
+description = "Paste a bet slip, get BET, SKIP or CHECK: read by a local model, every number checked against the slip, decided by your bankroll rules."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{ name = "Vinicius Pereira" }]
+dependencies = []
+keywords = ["betting", "odds", "bankroll", "ollama", "gemma", "local-llm", "ocr"]
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[project.scripts]
+betorskip = "betorskip.cli:main"
+
+[tool.setuptools]
+packages = ["betorskip"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]

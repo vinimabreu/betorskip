@@ -44,7 +44,19 @@ def test_the_market_line_shows_margin_and_fair_odds():
     slip = slip_text("single-home-win")
     reading = check(recorded("single-home-win"), slip)
     out = render(reading, decide(reading, RULES, slip))
-    assert "market   2.10 / 3.40 / 3.50 · house margin 5.6% · fair odds 2.22 (45.1%)" in out
+    # Under your max, the margin holds only if no outcome is missing from the slip.
+    assert "market   2.10 / 3.40 / 3.50 · house margin 5.6%, if these are all the outcomes" in out
+    assert "fair     power 2.19 (45.8%) · proportional 2.22 (45.1%)" in out
+
+
+def test_a_margin_over_your_max_needs_no_whole_market_caveat():
+    # A missing outcome would only add to the 14.4%, so the SKIP stands either way. The fair price is a
+    # range: the power method takes more of the margin from the longshots than a proportional devig does.
+    slip = slip_text("thin-market")
+    reading = check(recorded("thin-market"), slip)
+    out = render(reading, decide(reading, RULES, slip))
+    assert "market   1.72 / 3.20 / 4.00 · house margin 14.4%\n" in out
+    assert "fair     power 1.87 (53.5%) · proportional 1.97 (50.8%)" in out
 
 
 def test_fractional_odds_show_their_decimal_price():

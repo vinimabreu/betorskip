@@ -6,7 +6,7 @@ import pytest
 from conftest import EXAMPLES, recorded, slip_text
 
 from betorskip.read import check
-from betorskip.rules import Rules, decide
+from betorskip.rules import Rules, decide, power_devig
 
 RULES = Rules.load(EXAMPLES / "rules.toml")
 
@@ -159,15 +159,38 @@ def test_a_misread_market_cannot_skip_when_the_slip_disputes_its_odds():
     assert v.kind == "CHECK" and not v.walls
 
 
-def test_a_market_read_in_part_says_the_margin_is_unknown():
-    # On one screenshot Tesseract dropped the "Draw 3.20" line: 1.72 and 4.00 alone are not a market,
-    # so the margin rule cannot apply, and the verdict says so instead of staying silent.
+def test_a_market_under_100_percent_sends_the_slip_back():
+    # On one screenshot Tesseract dropped the "Draw 3.20" line of a 14.4% market, and the slip passed as a
+    # BET. 1.72 and 4.00 add up to 83.1%, and one book's market always adds up to more than 100%, so a
+    # price is misread or an outcome is missing. (A reader's comment on the write-up asked for this.)
     slip = slip_text("thin-market").replace("Draw 3.20\n", "")
     raw = recorded("thin-market")
     raw["market_odds"] = {"prices": ["1.72", "4.00"], "quote": "Redcliff Rangers 1.72 Stonebridge 4.00"}
     v = verdict_for("thin-market", raw=raw, slip=slip.replace("Redcliff Rangers 1.72\nStonebridge 4.00",
                                                               "Redcliff Rangers 1.72 Stonebridge 4.00"))
-    assert v.kind == "BET" and any(note.startswith("house margin unknown") for note in v.notes)
+    assert v.kind == "CHECK" and not v.walls
+    assert v.checks == ["the market's prices add up to only 83.1%: look for a misread price or a missing outcome"]
+
+
+def test_a_market_over_140_percent_says_the_margin_is_unknown():
+    # A stray number in the market line: no margin, a note, and the other rules decide.
+    raw = recorded("single-home-win")
+    slip = slip_text("single-home-win").replace("Kingsport City 3.50", "Kingsport City 3.50 1.25")
+    raw["market_odds"] = {"prices": ["2.10", "3.40", "3.50", "1.25"],
+                          "quote": "Northgate Rovers 2.10 Draw 3.40 Kingsport City 3.50 1.25"}
+    v = verdict_for("single-home-win", raw=raw, slip=slip)
+    assert v.kind == "BET" and v.margin is None
+    assert any(note.startswith("house margin unknown") for note in v.notes)
+
+
+def test_power_devig_matches_the_worked_example():
+    # 1.72 / 3.20 / 4.00: the exponent is about 1.15 and the favourite comes out at 53.5%, against 50.8%
+    # from a proportional devig.
+    fair = power_devig([1.72, 3.20, 4.00])
+    assert sum(fair) == pytest.approx(1.0)
+    assert [round(p, 3) for p in fair] == [0.535, 0.262, 0.203]
+    assert power_devig([2.0, 2.0]) is None          # no margin to take out
+    assert power_devig([1.9, 2.5]) is None          # under 100%: not one market
 
 
 def test_a_stake_the_slip_disputes_cannot_skip():

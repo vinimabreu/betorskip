@@ -91,11 +91,34 @@ class Verdict:
     stake_pct: float | None = None  # the stake as a share of your bankroll
     break_even: float | None = None  # how often the bet must win to break even
     margin: float | None = None     # the house margin on the whole market, when it shows
-    fair_odds: float | None = None  # the market's price for this pick with the margin taken out
+    margin_if_whole: bool = False   # the margin passed your max only if the slip shows every outcome
+    fair_odds: float | None = None  # the pick's price with the margin taken out in proportion to each price
+    fair_odds_power: float | None = None  # the same with the power method, which takes more from the longshots
 
 
 def money(value: float, sign: str = "") -> str:
     return f"{sign}{value:,.2f}"
+
+
+def power_devig(prices: list[float]) -> list[float] | None:
+    """Each implied probability raised to the one exponent that makes the market add up to 100%.
+
+    A proportional devig takes the margin from every outcome in the same share. Books usually
+    load more of it onto the longshots, and the power method follows that, so the two methods
+    give a range for the fair price instead of one number."""
+    implied = [1 / d for d in prices]
+    if sum(implied) <= 1 or any(p >= 1 for p in implied):
+        return None
+    low, high = 1.0, 2.0
+    while sum(p ** high for p in implied) > 1:
+        low, high = high, high * 2
+    for _ in range(60):
+        mid = (low + high) / 2
+        if sum(p ** mid for p in implied) > 1:
+            low = mid
+        else:
+            high = mid
+    return [p ** high for p in implied]
 
 
 def percent(share: float) -> str:
@@ -150,14 +173,28 @@ def decide(reading: Reading, rules: Rules, slip: str | None = None, prob: float 
         verdict.margin = book - 1
         if verdict.margin * 100 > rules.max_margin_pct:
             walls.append(f"the house keeps {verdict.margin:.1%} on this market (your max {rules.max_margin_pct:g}%)")
+        else:
+            # An outcome left off the slip would put the margin higher, so a pass holds only for a whole market.
+            verdict.margin_if_whole = True
         if len(legs) == 1 and legs[0].ok and any(abs(d - legs[0].value) < 1e-9 for d in market):
             verdict.fair_odds = book * legs[0].value
+            power = power_devig(market)
+            if power is not None:
+                pick = next(i for i, d in enumerate(market) if abs(d - legs[0].value) < 1e-9)
+                verdict.fair_odds_power = 1 / power[pick]
 
     partial = reading.facts.get("market_odds")
     if verdict.margin is None and partial is not None and not partial.ok and len(partial.value or []) >= 2 \
             and len(legs) == 1 and legs[0].ok and any(d and abs(d - legs[0].value) < 1e-9 for d in partial.value):
-        notes.append("house margin unknown: market prices are on the slip, but not one whole market could be "
-                     "confirmed")
+        book = sum(1 / d for d in partial.value) if all(partial.value) else None
+        if book is not None and book <= 1 and partial.problem.startswith("not one whole market"):
+            # One book's prices for one market always add up to more than 100%. Less means a price was
+            # misread or an outcome is missing, and the pick's own price may be the misread one.
+            checks.append(f"the market's prices add up to only {book:.1%}: look for a misread price or a "
+                          f"missing outcome")
+        else:
+            notes.append("house margin unknown: market prices are on the slip, but not one whole market could be "
+                         "confirmed")
 
     # A bonus you would have to churn before you can take it out.
     rollover = v("rollover")

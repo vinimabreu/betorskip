@@ -11,7 +11,8 @@ $ betorskip examples/slips/thin-market.txt --rules examples/rules.toml
 SKIP · the house keeps 14.4% on this market (your max 8%)
 Redcliff Rangers v Stonebridge · Match Result
 bet      single · Redcliff Rangers @ 1.72 · stake £10.00 · returns £17.20
-market   1.72 / 3.20 / 4.00 · house margin 14.4% · fair odds 1.97 (50.8%)
+market   1.72 / 3.20 / 4.00 · house margin 14.4%
+fair     power 1.87 (53.5%) · proportional 1.97 (50.8%)
 ```
 
 People who bet seriously write their rules down: never more than a small share of the bankroll on one bet, no six-leg accumulators, no market where the house keeps too much. The rules are easy. Applying them to every slip, at the moment of placing it, is the part that fails, and the numbers are where it fails quietly: odds of 17.47 read as 1747, a 14% margin that looks like any other price, a stake that was 12% of the bankroll.
@@ -30,8 +31,8 @@ People who bet seriously write their rules down: never more than a small share o
 3. **Scans.** Plain keyword scans run on the slip itself. If it says `67'`, "in-play" or "free bet" and the model said nothing of the kind, the verdict asks you to look instead of trusting the silence.
 4. **Decides.** Your rules, in a TOML file, turn the checked facts into a verdict:
    - **SKIP** names the rule the bet breaks.
-   - **CHECK** means a number a rule needs could not be confirmed, or the slip disagrees with itself, so you look before placing anything. The margin rule is the exception: it only applies when a whole market is on the slip, and without one the verdict is decided by the other rules.
-   - **BET** means no rule is broken. It says what share of your bankroll the stake is and how often the bet has to win to break even, and, when the whole market is on the page, what the house keeps and the market's fair odds for your pick.
+   - **CHECK** means a number a rule needs could not be confirmed, or the slip disagrees with itself, so you look before placing anything. The margin rule only applies when a whole market is on the slip. A single whose market adds up to under 100% comes back CHECK, because one bookmaker's prices for one market always add up to more: a price was misread or an outcome is missing. A market over 140% has a stray number in it, and the other rules decide.
+   - **BET** means no rule is broken. It says what share of your bankroll the stake is and how often the bet has to win to break even, and, when the whole market is on the page, what the house keeps (a margin under your max holds only if the slip shows every outcome) and your pick's fair odds two ways: the power devig, which takes more of the margin from the longshots, and the proportional one, which takes the same share from every price. The fair price is somewhere around that range; neither number is a measured probability.
 
 ## Screenshots: text you can check
 
@@ -55,9 +56,20 @@ How the verdicts came out, Tesseract then Gemma, against the verdict each made-u
 | 24 clean, 2x | to choose `--psm 4` | 24 | 0 | 0 |
 | 24 low-resolution JPEG | the fixes above were made on these | 21 | 3 | 0 |
 | 24 in two new styles, low-resolution JPEG | measured once | 10 | 13 | 1 SKIP that should have been BET |
-| 24 in the new styles, 2x PNG | measured once; nothing was tuned on it, and the final code gives the same 24 verdicts | 17 | 6 | 1 BET that should have been SKIP |
+| 24 in the new styles, 2x PNG | measured once; nothing was tuned on it | 17 | 6 | 1 BET that should have been SKIP |
 
-"Wrong" is a BET or a SKIP where the slip called for something else; CHECK is the tool sending the slip back to you. The wrong SKIP came from a market whose three prices were all misread the same way. The odds and stake rules already stood down when the slip disputed them (that came from the batch above); after this one, the margin rule does too. The wrong BET is the number to keep in mind: Tesseract dropped the "Draw 3.20" line of a market where the house keeps 14.4%, the margin rule had nothing to apply to, and the slip passed. A single whose market was only partly read now says "house margin unknown" instead of staying quiet, but the verdict is still BET. And in that last batch Tesseract read a whole market on only 2 of the 24 screenshots, neither of them a BET: none of the seven BETs had the margin rule applied, and five of them were right only because the made-up markets sit under 8%.
+"Wrong" is a BET or a SKIP where the slip called for something else; CHECK is the tool sending the slip back to you. The wrong SKIP came from a market whose three prices were all misread the same way. The odds and stake rules already stood down when the slip disputed them (that came from the batch above); after this one, the margin rule does too. The wrong BET came from the margin rule: Tesseract dropped the "Draw 3.20" line of a market where the house keeps 14.4%, the margin rule had nothing to apply to, and the slip passed. In that last batch Tesseract read a whole market on only 2 of the 24 screenshots, neither of them a BET: none of the seven BETs had the margin rule applied, and five of them were right only because the made-up markets sit under 8%.
+
+A reader of the write-up pointed at the way out: one bookmaker's prices for one market always add up to more than 100%, so a market that adds up to less has a misread price or a missing outcome. Since 14 October a single whose market adds up to under 100% comes back CHECK. The same readings, with verdicts from today's code:
+
+| screenshots | right | CHECK | wrong |
+|---|---|---|---|
+| 24 clean, 2x | 23 | 1 | 0 |
+| 24 low-resolution JPEG | 19 | 5 | 0 |
+| 24 in two new styles, low-resolution JPEG | 10 | 14 | 0 |
+| 24 in the new styles, 2x PNG | 13 | 11 | 0 |
+
+No verdict is wrong now, and that has a cost: seven BETs that were right only because the margin rule never ran now come back CHECK. In four of them Tesseract had dropped a line of the market, and in three it misread a price ("3,10" came out as 310). A slip the tool can't check goes back to you, which is the trade it is built on. The rule was written after these batches were measured, so this table is a re-score and the one above is the measurement.
 
 The last row is the closest to a phone screenshot. On the new-style small JPEGs most slips came back CHECK, which is the tool noticing text it can't trust, not reading it right: send the screenshot as the phone saved it, not a shrunk copy. Gemma reading the pixels got 3 of 110 key numbers wrong on each 2x batch and 19 and 25 of 110 on the two small-JPEG batches, and on all of them it added things that are not on the slip. A screenshot takes about 7 seconds either way.
 
@@ -67,7 +79,7 @@ If Tesseract is not installed, the model reads the image, the reading is marked 
 
 Each of the twelve made-up slips, one for each rule or odds format, went through Gemma 4 12B three times: 36 of 36 runs gave the expected verdict, with the same first line every time, at a median of 5.5 seconds a slip on my laptop. Twelve slips is a small set: it says the reading is stable on clean text, not that it is right on every slip you will meet. The screenshot measurements above are the harder half.
 
-The 134 tests replay recorded answers, for the twelve slips and for four low-resolution screenshots, so they run without a model or a network. Each check has the failure that motivated it as a test: the $84.00 the model worked out on its own, the lost decimal point, the misread legs, the lost minus sign, `retums`, the single quoted twice, a market misread three times the same way.
+The 137 tests replay recorded answers, for the twelve slips and for four low-resolution screenshots, so they run without a model or a network. Each check has the failure that motivated it as a test: the $84.00 the model worked out on its own, the lost decimal point, the misread legs, the lost minus sign, `retums`, the single quoted twice, a market misread three times the same way, a market missing its draw.
 
 ## Install
 
@@ -118,7 +130,8 @@ $ betorskip examples/slips/single-home-win.txt --rules examples/rules.toml --pro
 BET · stake 2.0% of your bankroll · break-even 47.6%
 Northgate Rovers v Kingsport City · Match Result
 bet      single · Northgate Rovers @ 2.10 · stake £10.00 · returns £21.00
-market   2.10 / 3.40 / 3.50 · house margin 5.6% · fair odds 2.22 (45.1%)
+market   2.10 / 3.40 / 3.50 · house margin 5.6%, if these are all the outcomes
+fair     power 2.19 (45.8%) · proportional 2.22 (45.1%)
 note     at your 52% the bet is worth +9.2% of the stake; Kelly says 8.4% of bankroll, 0.25 Kelly is £10.45
 ```
 
@@ -141,9 +154,9 @@ An unknown setting, a setting given twice, a wrong type, a negative or non-finit
 
 ## What it does not do
 
-- It does not predict anything. Break-even, house margin and fair odds are arithmetic on the prices; expected value and Kelly use the probability you give it, and are only as good as that number.
+- It does not predict anything. Break-even, house margin and fair odds are arithmetic on the prices, and the fair odds depend on how the margin is taken out, so you get two methods side by side. Expected value and Kelly use the probability you give it, and are only as good as that number.
 - It does not read any bookmaker for you. You paste or capture the slip; nothing here logs in, scrapes or places a bet.
-- It can't tell a misread price from a real one when the slip has nothing to check it against. A price you did not pick, read wrong, changes the margin; the 100% to 140% bound catches a stray number, not that.
+- It can't always tell a misread price from a real one when the slip has nothing to check it against. A price you did not pick, read wrong, changes the margin: a misread that takes the market under 100% comes back CHECK, and one that keeps it between 100% and 140% gets through.
 - The flag checks are lists of words, not proof. They stop a quote that talks about something else; they can't prove a quote means what the model says.
 
 ## Development

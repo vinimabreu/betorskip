@@ -46,9 +46,20 @@ def _market(reading: Reading, verdict: Verdict) -> str:
     if fact is None or not fact.ok or verdict.margin is None:
         return ""
     line = f"{fact.printed} · house margin {verdict.margin:.1%}"
-    if verdict.fair_odds is not None:
-        line += f" · fair odds {show_odds(verdict.fair_odds)} ({1 / verdict.fair_odds:.1%})"
+    if verdict.margin_if_whole:
+        line += ", if these are all the outcomes"
     return line
+
+
+def _fair(verdict: Verdict) -> str:
+    """Two ways of taking the margin out, side by side, so the fair price reads as a range."""
+    if verdict.fair_odds is None or verdict.margin is None:
+        return ""
+    parts = []
+    if verdict.fair_odds_power is not None:
+        parts.append(f"power {show_odds(verdict.fair_odds_power)} ({1 / verdict.fair_odds_power:.1%})")
+    parts.append(f"proportional {show_odds(verdict.fair_odds)} ({1 / verdict.fair_odds:.1%})")
+    return " · ".join(parts)
 
 
 def render(reading: Reading, verdict: Verdict) -> str:
@@ -66,6 +77,9 @@ def render(reading: Reading, verdict: Verdict) -> str:
     market = _market(reading, verdict)
     if market:
         lines.append(f"market   {market}")
+        fair = _fair(verdict)
+        if fair:
+            lines.append(f"fair     {fair}")
     for wall in verdict.walls[1:]:
         lines.append(f"wall     {wall}")
     for item in verdict.checks[1 if verdict.kind == "CHECK" else 0:]:
